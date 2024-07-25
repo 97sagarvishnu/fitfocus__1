@@ -1,0 +1,74 @@
+{% extends 'base.html'%}
+
+{%block title%} Trainers {%endblock%}
+
+{% block content %}
+
+{% load static %}
+
+
+<img src="https://static.wixstatic.com/media/d3fada_298e2b41d7d54b5e9371c865d74c3ebd~mv2.jpg/v1/crop/x_0,y_2397,w_4669,h_1811/fill/w_2243,h_870,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/DSC02939-2.jpg" class="img-fluid" alt="...">
+<p style="text-align:center ;font-weight:700px;font-size:30px;color: white;font-family: fantasy;">Our certified personal trainers create the perfect programs to help
+you reach your goals, designed 100% around you.</p><br><br>
+
+<div style="margin-left: 20px;;">
+<img src="https://investmentu.com/wp-content/uploads/2022/02/gym-stocks.jpg" class="rounded float-start" alt="...">
+</div><br><br>
+<div style="padding-left: 20px;;
+display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 4px outset green;
+  min-width: 12rem;
+  min-height: 12rem;
+  border-radius: 0px;
+  background: linear-gradient(145deg, #121111, #1a1919);
+  /* box-shadow:  5px 5px 25px #a1dc7f,
+               -10px -10px 40px #a1dc7f; */
+  margin: 0 2rem;
+  padding: 0 2rem;
+  color: #0b0a0d;
+  text-shadow: -6px 6px 15px rgba(0,0,0,0.5),
+                6px -6px 15px rgba(16, 15, 15, 0.8);
+                ">
+<h1 style="text-align: center;color: white;font-weight:600px;font-size: 75px;font-family: fantasy;">
+    It's 
+TIME</h1><br>
+<p style="text-align:left;font-weight: 400;color: white;font-family: fantasy;">           Here at FIT & FOCUS, we focus on bringing you
+           the most powerful workouts to meet your needs:
+           our toolbox includes weighted battle ropes, kettlebells, 
+
+           TRX® suspension straps, Turf Zone, Med Balls, and the list goes on.
+           It may sound like a lot, but this world-class functional training
+            equipmenthelps our trainers provide you with an array of
+           High Intensity Interval Training (HIIT) workouts.
+
+           Our fit & focus locations offer PowerPlate, an all-encompassing 
+           fitness programthat includes revolutionary vibration technology.
+           Come check it out for yourself!</p><br></div>
+
+<br><br><br><br><br><br><br>
+
+
+<h1 style="font: size 80px;text-align: center;color:white;font-family: fantasy;"> OUR TRAINERS</h1><br>
+{% for t in trainers %}
+
+
+<div style="padding-left: 8px;float: left;">
+<div class="card text-center" style=" width: 22rem;padding-block: 2px;background-color: rgb(26, 52, 24);color: rgb(247, 243, 243);
+display:inline-block;">
+<div ><img src="{{t.trainer_image.url}}" class="card-img-top" alt="..."></div>
+<div class="card-body">
+<h5 class="card-title">{{t.trainer_name}}</h5>
+<p class="card-text">{{t.trainer_dept}}</p>
+
+</div>
+</div>
+</div>
+
+{% endfor %}
+<br><br><br>
+<br><br><br><br><br><br><br>
+
+{% endblock %}

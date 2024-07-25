@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payment</title>
+    <style>
+    
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color:#a0b1df;
+
+    padding: 30px 10px;
+}
+
+.card {
+    max-width: 500px;
+    margin: auto;
+    color: black;
+    border-radius: 20 px;
+}
+
+p {
+    margin: 0px;
+}
+
+.container .h8 {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.btn.btn-primary {
+    width: 71%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    background-color: #2d4dda;
+    border: none;
+    transition: 0.5s;
+    background-size: 200% auto;
+
+}
+
+
+.btn.btn.btn-primary:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+.btn.btn-primary:hover .fas.fa-arrow-right {
+    transform: translate(15px);
+    transition: transform 0.2s ease-in;
+}
+
+.form-control {
+    color: rgb(238, 237, 237);
+    background-color:white;
+    border: 2px solid transparent;
+    height: 60px;
+    padding-left: 20px;
+    vertical-align: middle;
+}
+
+.form-control:focus {
+    color: rgb(16, 14, 14);
+    background-color: white;
+    border: 2px solid #2d4dda;
+    box-shadow: none;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+::placeholder {
+    font-size: 14px;
+    font-weight: 600;
+}
+    </style>
+</head>
+<body>
+        <div class="container p-0">
+            <div class="card px-4">
+                <p class="h8 py-3" style="padding-top: 30px;">Payment Details</p><br><br><br>
+                <!-- Wrap your form elements within a <form> tag and give it an ID -->
+                <form id="paymentForm">
+                    <div class="row gx-3">
+                        <div class="col-12">
+                            <div class="d-flex flex-column">
+                                <p class="text mb-1">Person Name</p>
+                                <input class="form-control mb-3" type="text" placeholder="Name" id="personName" maxlength="20" required>
+                            </div><br>
+                        </div>
+                        <div class="col-12">
+                            <div class="d-flex flex-column">
+                                <p class="text mb-1">Card Number</p>
+                                <input class="form-control mb-3" type="text" placeholder="000000000000000" id="cardNumber" maxlength="15" data-mask="000000000000000" required>
+                            </div><br>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex flex-column">
+                                <p class="text mb-1">Expiry</p>
+                                <input class="form-control mb-3" type="text" id="expiryDate" placeholder="00/00" maxlength="5" data-mask="00/00" required>
+                            </div><br>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex flex-column">
+                                <p class="text mb-1">CVV/CVC</p>
+                                <input class="form-control mb-3 pt-2" type="password" id="cvv" maxlength="3" placeholder="000" data-mask="000" required>
+                            </div><br>
+                        </div>
+                        <div class="col-12">
+                            <!-- Change the button type to "submit" to trigger the form submission -->
+                            <button type="submit" class="btn btn-primary mb-3"> Pay 1000</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    
+     <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Validate form fields
+            let personName = document.getElementById('personName').value.trim();
+            let cardNumber = document.getElementById('cardNumber').value.trim();
+            let expiryDate = document.getElementById('expiryDate').value.trim();
+            let cvv = document.getElementById('cvv').value.trim();
+
+            // Perform validation checks
+            if (personName.length === 0|| cardNumber.length === 0 || expiryDate.length === 0 || cvv.length === 0) {
+                alert('All fields are require.');
+                return;
+            }
+
+            
+
+            if (cardNumber.length !== 15) {
+                alert(' Invalid card number! Card number should be 15 digits.');
+                return;
+            }
+
+            if (expiryDate.length !== 5) {
+                alert('Expiry date should be in MM/YY format.');
+                return;
+            }
+
+            if (cvv.length !== 3) {
+                alert('CVV should be  3 digits.');
+                return;
+            }
+
+            // If all validations pass, you can proceed with form submission or further processing
+            window.location.href = "{% url 'otp' %}";
+});
+    
+    </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    
+</body>
+</html>

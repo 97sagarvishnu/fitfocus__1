@@ -1,0 +1,64 @@
+{% extends 'base.html'%}
+
+{% block title %} booking {% endblock %}
+{% block content %}
+
+
+<div style="background-position: center;">
+<img src="https://wallpaperbat.com/img/400555-gym-workout-wallpaper-top-free-gym-workout-background.jpg" 
+alt="Avatar" class="image" width="100%">
+
+
+    
+  </div>
+  
+</div>
+</div><br>
+<div style="display: flex;">
+<div style="padding-left: 550px; font-family: fantasy;color:rgb(241, 246, 241)">
+<h2 style="color: green;">GYM HOURS   <img src="https://cdn-icons-png.freepik.com/512/2/2306.png" alt="" width="30px" height="30px"></h2><br>
+<p>Monday : 5am - 10pm</p>
+<p>Tuesday : 5am - 10pm</p>
+<p>Wednesday : 5am - 10pm</p>
+<p>Thursday : 5am - 10pm</p>
+<p>Friday : 5am - 10pm</p>
+<p>Saturday : 5am - 10pm</p>
+<p>Sunday : HOLIDAY</p><br>
+</div>
+<div style="padding-left: 110px; color:green;font-family: fantasy;">
+<h2 style="padding-left: 15px;">CONNECT WITH US</h2><br>
+<p style="padding-left: 40px;color: white;"><img src="https://static.vecteezy.com/system/resources/thumbnails/016/416/792/small_2x/phone-call-icon-in-black-colors-telephone-signs-illustration-png.png" alt="" width="35px" height="35px">  0812456667</p>
+<div style="padding-left: 40px; text-decoration:none ;color: white;" >
+
+  <a style="color: white;text-decoration: none;" href="http://instagram.com"><img src="https://png.pngtree.com/png-vector/20221018/ourmid/pngtree-instagram-social-platform-icon-png-image_6315976.png" alt="" width="40px" height="40px"> Fit_Focus_gym</a><br>
+  </div><br>
+
+  <div style="padding-left: 40px; text-decoration: none;" >
+
+  <a style="color: white;text-decoration: none;"href="http://facebook.com"> <img src="https://www.freepnglogos.com/uploads/facebook-logo-icon/facebook-logo-icon-facebook-icon-png-images-icons-and-png-backgrounds-1.png" alt="" width="40px" height="40px"> Fit & Focus</a><br>
+    </div><br>
+  
+    <div style="padding-left: 40px; text-decoration: none;" >
+
+      <a style="color: white;text-decoration: none;" href="http://twitter.com"><img src="https://www.freepnglogos.com/uploads/twitter-logo-png/twitter-icon-circle-png-logo-8.png" alt="" width="40px" height="40px">   https://twitter.com/FitFocus</a><br>
+      </div>
+</div>
+</div><br>
+<div id="map" style="width:100%;height:400px;background:white"></div>
+
+<script>
+function myMap() {
+var mapOptions = {
+    center: new google.maps.LatLng(51.5, -0.12),
+    zoom: 10,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+}
+var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+
+
+
+{% endblock %}

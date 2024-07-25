@@ -1,0 +1,62 @@
+{% extends 'base.html'%}
+
+
+{% block title %} booking {% endblock %}
+{% block content %}
+
+    
+    <style>
+   
+form{padding-left: 600px;padding-top: 57px;color:white;box-sizing: border-box;border-radius: 30px;}
+
+body{
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/5ff0f7e5e13675281091c585/1612818596403-QIGV0M1H5V8HEXPHCUID/Untitled+design+%284%29.jpg");}
+  
+  .blink {
+                animation: blink-animation 1s steps(5, start) infinite;
+               
+              }
+              @keyframes blink-animation {
+                to {
+                  visibility: hidden;
+                }
+              }
+  .input {
+   
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    
+}
+         
+
+    </style>
+    
+
+    
+
+<form action="" method="post">{% csrf_token %}
+  <h2 class="blink" style="padding-right: 120px; font-size:4em;font-family:serif;top:17px;color:rgb(248, 244, 244);font-family: fantasy;">Enroll Now !</h2>
+</div><br><br><br>
+    <div class="input" style="font-family: fantasy;font-weight: 90;display: inline-block; 
+    clear: left;
+    width: 250px;
+    text-align: right;">
+    {{form.as_p}}</div><br><br>
+
+    <p style="padding-left:25px ;font-family: fantasy;font-weight: 100;">Whats your current goal ?</p><br>
+<div style="padding-left: 25px;font-family: fantasy;">
+    <input type="radio" id="html" name="fav_language" value="HTML">Cardio <br>
+    <input type="radio" id="html" name="fav_language" value="HTML">Yoga <br>
+    <input type="radio" id="html" name="fav_language" value="HTML">Body Building <br>
+    <input type="radio" id="html" name="fav_language" value="HTML">Maitain Weight<br><br>
+</div>
+    <div style="padding-left: 120px;font-family: fantasy;">
+    <input type="submit" value="Submit">
+    </div>
+    
+</form><br><br><br><br><br><br><br>
+{% endblock %}
